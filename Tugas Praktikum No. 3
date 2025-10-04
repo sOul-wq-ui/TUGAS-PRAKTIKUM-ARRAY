@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    int temp;  // Variabel sementara untuk tukar elemen
+
+    // Input jumlah elemen array
+    printf("Masukkan jumlah elemen array: ");
+    scanf("%d", &n);
+    int arr[100];  // Asumsi maksimal 100 elemen
+
+    // Input elemen array
+    printf("Masukkan elemen array:\n");
+    for(i = 0; i < n; i++) {
+        printf("arr[%d] = ", i);
+        scanf("%d", &arr[i]);
+    }
+
+   
+    printf("\nArray sebelum diurutkan:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+  
+    for(i = 0; i < n - 1; i++) {
+        // Loop dalam: bandingkan dan tukar elemen bersebelahan
+        for(j = 0; j < n - 1 - i; j++) {
+            if(arr[j] > arr[j + 1]) {  // Jika elemen kiri lebih besar dari kanan
+                temp = arr[j];         // Tukar elemen
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+   
+    printf("\nArray setelah diurutkan (terkecil ke terbesar):\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
