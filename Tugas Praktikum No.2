@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main() {
+    int n1, n2, i, j;
+
+    // Input ukuran array pertama
+    printf("Masukkan jumlah elemen array pertama: ");
+    scanf("%d", &n1);
+    int arr1[100];  // Asumsi maksimal 100 elemen
+
+    // Input elemen array pertama
+    printf("Masukkan elemen array pertama:\n");
+    for(i = 0; i < n1; i++) {
+        printf("arr1[%d] = ", i);
+        scanf("%d", &arr1[i]);
+    }
+
+    // Input ukuran array kedua
+    printf("\nMasukkan jumlah elemen array kedua: ");
+    scanf("%d", &n2);
+    int arr2[100];
+
+    // Input elemen array kedua
+    printf("Masukkan elemen array kedua:\n");
+    for(i = 0; i < n2; i++) {
+        printf("arr2[%d] = ", i);
+        scanf("%d", &arr2[i]);
+    }
+
+    // Array hasil penggabungan
+    int arrGabung[200];  // Maksimal gabungan 200 elemen
+
+    // Salin elemen arr1 ke arrGabung
+    for(i = 0; i < n1; i++) {
+        arrGabung[i] = arr1[i];
+    }
+
+    // Salin elemen arr2 ke arrGabung setelah elemen arr1
+    for(j = 0; j < n2; j++) {
+        arrGabung[i + j] = arr2[j];
+    }
+
+    // Tampilkan hasil penggabungan
+    printf("\nArray hasil penggabungan:\n");
+    for(i = 0; i < n1 + n2; i++) {
+        printf("%d ", arrGabung[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
